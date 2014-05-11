@@ -8,6 +8,6 @@ PRODUCT_MODEL := LGE_VK810
 PRODUCT_MANUFACTURER := LGE
 
 # Inherit from hardware-specific part of the product configuration
-$(call inherit-product, device/lge/v500/device.mk)
+$(call inherit-product, device/lge/vk810/device.mk)
 $(call inherit-product-if-exists, vendor/lge/vk810/vk810-vendor.mk)
 
