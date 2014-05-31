@@ -572,6 +572,13 @@ on boot
 
 on fs
 # LGE_CHANGED_S [2013-02-14][jungjoo.nahm@lge.com] for widevine drm and lgdrm(future-use)
+    #sns
+    mkdir /sns 0775 system system
+    wait /dev/block/platform/msm_sdcc.1/by-name/sns
+    exec /system/bin/e2fsck -y /dev/block/platform/msm_sdcc.1/by-name/sns
+    mount ext4 /dev/block/platform/msm_sdcc.1/by-name/sns /sns nosuid nodev barrier=1 data=ordered
+    mkdir /sns/cal 0771 system system
+
     chown system system /persist-lg
     chmod 0771 /persist-lg
 
